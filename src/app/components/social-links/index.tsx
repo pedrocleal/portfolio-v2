@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { buttonVariants } from "@/app/components/shad/button"
+import { buttonVariants } from "@/shad-components/button"
 
 export default function SocialLinks() {
   return (

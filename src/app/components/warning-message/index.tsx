@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertTitle } from "@/app/components/shad/alert"
+import { Alert, AlertDescription, AlertTitle } from "@/shad-components/alert"
 
 
 export default function WarningMessage() {
