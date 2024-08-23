@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
+@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -57,9 +57,9 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-} */
+}
 
-@layer base {
+/* @layer base {
   :root {
     --background: 212 100% 95%;
     --foreground: 212 5% 10%;
@@ -104,7 +104,7 @@
     --ring: 212 100% 50%;
     --radius: 0.5rem;
   }
-}
+} */
 
 @layer base {
   * {

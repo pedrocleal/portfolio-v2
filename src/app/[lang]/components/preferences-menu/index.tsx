@@ -26,7 +26,7 @@ export default function PreferencesMenu() {
 
   return (
     <div className="w-full">
-      <div className="mt-4 flex items-center w-full gap-2">
+      <div className="mb-4 flex items-center w-full gap-2">
         <Select
           defaultValue={defaultLangValue}
           onValueChange={(value) => {
