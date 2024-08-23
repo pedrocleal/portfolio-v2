@@ -25,7 +25,7 @@ export default function PreferencesMenu() {
   const defaultLangValue = pathName.split("/")[1] as Locale;
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col mt-4 border border-x-0 border-b-0 pt-4">
       <div className="mb-4 flex items-center w-full gap-2">
         <Select
           defaultValue={defaultLangValue}

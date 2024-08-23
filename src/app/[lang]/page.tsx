@@ -23,10 +23,11 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       "
       >
         <ProfileInfo dictionary={dictionary["profile-info"]} />
+
         <Greetings dictionary={dictionary["greetings"]} />
 
-        <PreferencesMenu />
         <SocialLinks />
+        <PreferencesMenu />
       </section>
 
       <Projects />
