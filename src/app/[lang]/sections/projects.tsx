@@ -158,7 +158,7 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="flex flex-col items-start justify-between gap-4 p-4 bg-slate-50/50 rounded-lg shadow-md border dark:bg-transparent dark:border-slate-900 min-[480px]:flex-row min-[480px]:items-center min-[480px]:justify-between min-[480px]:gap-8"
+            className="flex flex-col items-start justify-between gap-4 p-4 bg-transparent rounded-lg shadow-sm border dark:bg-transparent dark:border-slate-900 min-[480px]:flex-row min-[480px]:items-center min-[480px]:justify-between min-[480px]:gap-8"
           >
             <div className="flex flex-col gap-6 items-start justify-start min-[480px]:flex-row">
               <Image
