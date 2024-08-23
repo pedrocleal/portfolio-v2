@@ -13,7 +13,7 @@ export default function WarningMessage() {
         <AlertTitle className="text-lg">
           Yoo!
         </AlertTitle>
-        <AlertDescription className="text-gray-600">
+        <AlertDescription className="text-gray-600 dark:text-gray-300">
           {t("warning-message")}
         </AlertDescription>
       </div>

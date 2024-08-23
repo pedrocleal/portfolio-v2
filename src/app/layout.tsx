@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { appWithTranslation } from "next-i18next"
 import type { AppProps } from "next/app";
+import { ThemeClientProvider } from "./components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +21,14 @@ function RootLayout({
   children,
 }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body className={inter.className}>
+          <ThemeClientProvider>{children}</ThemeClientProvider>
+        </body>
+      </html>
+    </>
   );
 }
 
