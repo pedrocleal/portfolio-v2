@@ -32,4 +32,5 @@ function RootLayout({
   );
 }
 
-export default appWithTranslation(RootLayout);
+// export default appWithTranslation(RootLayout);
+export default RootLayout
