@@ -1,53 +1,20 @@
+"use client";
+
 import { Button } from "@/shad-components/button";
 import { Badge } from "@/shad-components/ui/badge";
 import Image, { StaticImageData } from "next/image";
-import topSuplementosImg from "@/assets/projects/top-suplementos.png";
-import tradsCorretoraImg from "@/assets/projects/trads-corretora.png";
-import dentalLiderImg from "@/assets/projects/dental-lider.png";
 import { GitHubLogoIcon, OpenInNewWindowIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
-
-const projects = [
-  {
-    id: 1,
-    title: "Trads Corretora",
-    img: tradsCorretoraImg,
-    type: "professional",
-    description:
-      "Projeto de marketplace para a Abexpay. Desenvolvido com Next.js, TailwindCSS e TypeScript. O projeto foi desenvolvido com o intuito de ser uma plataforma de vendas de produtos e serviços para os clientes da Abexpay.",
-    link: "https://github.com",
-    techs: ["Next.js", "TailwindCSS", "TypeScript", "React", "Node.js", "MongoDB", "GraphQL"],
-    private: true,
-  },
-  {
-    id: 2,
-    title: "Dental Líder",
-    img: dentalLiderImg,
-    type: "professional",
-    description:
-      "Projeto de agenda de contatos. Desenvolvido com Next.js, TailwindCSS e TypeScript. O projeto foi desenvolvido com o intuito de ser uma agenda de contatos para os usuários.",
-    demo: "https://dentallider.com.br",
-    link: "https://github.com",
-    techs: ["Next.js", "TailwindCSS", "TypeScript", "React", "Node.js", "MongoDB", "GraphQL"],
-    private: false,
-  },
-  {
-    id: 3,
-    title: "Top Suplementos",
-    img: topSuplementosImg,
-    type: "personal",
-    description:
-      "Projeto pessoal de e-commerce. Desenvolvido com Next.js, TailwindCSS e TypeScript. O projeto foi desenvolvido com o intuito de ser uma loja virtual de suplementos alimentares.",
-    demo: "https://top-suplementos.netlify.app/",
-    link: "https://github.com/pedrocleal/top-suplementos",
-    techs: ["Next.js", "TailwindCSS", "TypeScript", "React", "Node.js", "MongoDB", "GraphQL"],
-    private: false,
-  },
-];
+import projects from "@/database/projects";
+import { Tabs, TabsList, TabsTrigger } from "@/shad-components/ui/tabs";
 
 export default function Projects() {
-
   const [activeType, setActiveType] = useState<"all" | "personal" | "professional">("all");
+
+  const filteredProjects = projects.filter((project) => {
+    if (activeType === "all") return true;
+    return project.type === activeType;
+  });
 
   return (
     <section className="w-full mb-36">
@@ -58,15 +25,29 @@ export default function Projects() {
         <p className="text-sm text-slate-400">Alguns dos meus projetos mais recentes.</p>
       </div>
 
-      <div className="flex flex-col gap-4 mt-8">
-        {projects.map((project) => (
+      <Tabs className="mt-6" defaultValue="all">
+        <TabsList className="w-full">
+          <TabsTrigger className="w-full" value="all" onClick={() => setActiveType("all")}>
+            Todos
+          </TabsTrigger>
+          <TabsTrigger className="w-full" value="personal" onClick={() => setActiveType("personal")}>
+            Projetos pessoais
+          </TabsTrigger>
+          <TabsTrigger className="w-full" value="professional" onClick={() => setActiveType("professional")}>
+            Projetos profissionais
+          </TabsTrigger>
+        </TabsList>
+      </Tabs>
+
+      <div className="flex flex-col gap-4 mt-4">
+        {filteredProjects.map((project) => (
           <div
             key={project.id}
             className="flex flex-col items-start justify-between gap-4 p-4 bg-transparent rounded-lg shadow-sm border dark:bg-transparent dark:border-slate-900 min-[480px]:flex-row min-[480px]:items-center min-[480px]:justify-between min-[480px]:gap-8"
           >
             <div className="flex flex-col gap-6 items-start justify-start min-[480px]:flex-row">
               <Image
-                src={project.img as StaticImageData}
+                src={project.img}
                 className=" rounded-md object-contain mt-1"
                 alt={project.title}
                 width={150}
