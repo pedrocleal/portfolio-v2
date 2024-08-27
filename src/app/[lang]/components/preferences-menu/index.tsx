@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 import { Locale } from "../../../../../i18n-config";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/shad-components/button";
-import { useHasMounted } from "@/app/hooks/use-has-mounted";
+import { useHasMounted } from "@/app/hooks/useHasMounted";
 
 export default function PreferencesMenu() {
   const { theme, setTheme } = useTheme();

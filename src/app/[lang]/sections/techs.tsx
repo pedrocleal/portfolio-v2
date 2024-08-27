@@ -19,6 +19,7 @@ export default function Techs({
       <div className="mt-8 flex flex-wrap w-full gap-8">
         {techs.map((tech) => (
           <Image
+            key={tech.name}
             width={30}
             height={30}
             src={tech.iconSrc}
