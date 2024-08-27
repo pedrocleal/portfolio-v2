@@ -46,16 +46,21 @@ export default function Projects() {
             className="flex flex-col items-start justify-between gap-4 p-4 bg-transparent rounded-lg shadow-sm border dark:bg-transparent dark:border-slate-900 min-[480px]:flex-row min-[480px]:items-center min-[480px]:justify-between min-[480px]:gap-8"
           >
             <div className="flex flex-col gap-6 items-start justify-start min-[480px]:flex-row">
-              <Image
+              {/* <Image
                 src={project.img}
                 className=" rounded-md object-contain mt-1"
                 alt={project.title}
                 width={150}
                 height={10}
-              />
+              /> */}
               <div>
-                <h4 className="text-lg font-bold">{project.title}</h4>
-                {/* <p className="text-sm text-slate-500 dark:text-slate-500">{project.description}</p> */}
+                <h4 className="text-lg font-bold flex gap-2 items-center">
+                  {project.title}
+                  {project["in-progress"] && (
+                    <Badge className="bg-green-500/30 text-green-500" variant={"outline"}>Em desenvolvimento</Badge>
+                  )}
+                </h4>
+                <p className="text-xs text-slate-500 dark:text-slate-500">{project.description}</p>
 
                 <div className="mt-2">
                   {project.techs.map((tech) => (
@@ -68,11 +73,13 @@ export default function Projects() {
             </div>
 
             <div className="flex flex-row gap-2 items-start justify-start min-[480px]:flex-col">
-              <Button variant={"outline"} size={"icon"}>
+              <Button variant={"outline"} size={"icon"}
+                disabled={!project["demo"]}
+                onClick={() => window.open(project["demo"])}>
                 <OpenInNewWindowIcon />
               </Button>
 
-              <Button variant={"outline"} size={"icon"} className="text-sm">
+              <Button disabled={!project["repository-url"]} variant={"outline"} size={"icon"} className="text-sm" onClick={() => window.open(project["repository-url"])}>
                 <GitHubLogoIcon />
               </Button>
             </div>

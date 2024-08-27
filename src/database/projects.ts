@@ -2,60 +2,86 @@ import topSuplementosImg from "@/assets/projects/top-suplementos.png";
 import tradsCorretoraImg from "@/assets/projects/trads-corretora.png";
 import dentalLiderImg from "@/assets/projects/dental-lider.png";
 
-export default [{
+export default [
+  {
     "id": 1,
-    "title": "Trads Corretora",
-    "img": tradsCorretoraImg,
+    "title": "Abexpay Marketplace",
     "type": "professional",
-    "description": "Projeto de marketplace para a Abexpay. Desenvolvido com Next.js, TailwindCSS e TypeScript. O projeto foi desenvolvido com o intuito de ser uma plataforma de vendas de produtos e serviços para os clientes da Abexpay.",
-    "link": "https://github.com",
+    "description": "Plataforma de marketplace para parcelamento de débitos.",
+    "demo": "https://abexpay.com",
     "techs": [
       "Next.js",
-      "TailwindCSS",
-      "TypeScript",
-      "React",
-      "Node.js",
-      "MongoDB",
-      "GraphQL"
+      "React.js",
+      "Typescript",
+      "React Query",
+      "Hook form",
+      "Zod",
+      "Sentry",
+      "Auth",
+      "Google Analytics"
+    ],
+    "private": true
+  },
+
+  {
+    "id": 2,
+    "title": "Hiper Médica",
+    "type": "professional",
+    description: "Website para uma clínica médica.",
+    "demo": "https://hipermedica.vercel.app",
+    "techs": [
+      "Next.js",
+      "React.js",
+      "Javascript",
+      "Styled Components"
     ],
     "private": true
   },
   {
-    "id": 2,
-    "title": "Dental Líder",
-    "img": dentalLiderImg,
-    "type": "professional",
-    "description": "Projeto de agenda de contatos. Desenvolvido com Next.js, TailwindCSS e TypeScript. O projeto foi desenvolvido com o intuito de ser uma agenda de contatos para os usuários.",
-    "demo": "https://dentallider.com.br",
-    "link": "https://github.com",
+    "id": 3,
+    "title": "Fast Store",
+    "type": "personal",
+    "description": "Projeto pessoal de um e-commerce fake. Desenvolvido com o intuito de praticar os meus estudos.",
+    "demo": "https://fast-store.vercel.app/",
+    "repository-url": "https://github.com/pedrocleal/fast-store",
     "techs": [
       "Next.js",
+      "React.js",
       "TailwindCSS",
       "TypeScript",
-      "React",
-      "Node.js",
-      "MongoDB",
-      "GraphQL"
     ],
     "private": false
   },
   {
-    "id": 3,
-    "title": "Top Suplementos",
-    "img": topSuplementosImg,
-    "type": "personal",
-    "description": "Projeto pessoal de e-commerce. Desenvolvido com Next.js, TailwindCSS e TypeScript. O projeto foi desenvolvido com o intuito de ser uma loja virtual de suplementos alimentares.",
-    "demo": "https://top-suplementos.netlify.app/",
-    "link": "https://github.com/pedrocleal/top-suplementos",
+    "id": 4,
+    "title": "Dental Líder",
+    "type": "professional",
+    "description": "Website para uma clínica odontológica.",
+    "demo": "https://dentallider.com.br",
     "techs": [
       "Next.js",
-      "TailwindCSS",
-      "TypeScript",
-      "React",
-      "Node.js",
-      "MongoDB",
-      "GraphQL"
+      "React.js",
+      "Javascript",
+      "Styled Components",
     ],
     "private": false
-  }
+  },
+  {
+    "id": 5,
+    "title": "Monitore",
+    "type": "professional",
+    "description": "Aplicativo de monitoramento de infraestrutura através do gerenciamento de logs, instâncias e serviços.",
+    "demo": "https://hipermedica.vercel.app",
+    "techs": [
+      "Next.js",
+      "React.js",
+      "Typescript",
+      "TailwindCSS",
+      "Shadcn",
+      "Hook form",
+      "Zod",
+    ],
+    "in-progress": true,
+    "private": true
+  },
 ]
