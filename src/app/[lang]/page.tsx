@@ -5,6 +5,7 @@ import ProfileInfo from "./components/profile-info";
 import SocialLinks from "./components/social-links";
 import Greetings from "./components/greetings";
 import Projects from "./sections/projects";
+import Techs from "./sections/techs";
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const dictionary = await getDictionary(lang);
@@ -31,6 +32,8 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       </section>
 
       <Projects dictionary={dictionary["projects"]} />
+
+      <Techs dictionary={dictionary["techs"]} />
     </main>
   );
 }

@@ -19,7 +19,7 @@ export default function Projects({ dictionary }: { dictionary: Awaited<ReturnTyp
   });
 
   return (
-    <section className="w-full mb-36">
+    <section className="w-full mb-16">
       <div className="flex flex-col text-left">
         <h3 className="mb-1 text-3xl font-bold leading-none tracking-tight text-slate-800 md:text-4xl lg:text-4xl dark:text-white ">
           {dictionary.title}
@@ -45,7 +45,7 @@ export default function Projects({ dictionary }: { dictionary: Awaited<ReturnTyp
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="flex flex-col items-start justify-between gap-4 p-4 bg-transparent rounded-lg shadow-sm border dark:bg-transparent dark:border-slate-900 min-[480px]:flex-row min-[480px]:items-center min-[480px]:justify-between min-[480px]:gap-8"
+            className="flex flex-col items-start justify-between gap-4 p-4 bg-transparent rounded-lg shadow border dark:bg-transparent dark:border-slate-900 min-[480px]:flex-row min-[480px]:items-center min-[480px]:justify-between min-[480px]:gap-8"
           >
             <div className="flex flex-col gap-6 items-start justify-start min-[480px]:flex-row">
               {/* <Image

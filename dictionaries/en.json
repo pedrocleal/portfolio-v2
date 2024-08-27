@@ -20,5 +20,9 @@
       "monitore": "Infrastructure monitoring application through management of logs, instances and services.",
       "portfolio-v2": "Repository of the project you are viewing now. A revamp of my old portfolio using new technologies!"
     }
+  },
+  "techs": {
+    "title": "Techs",
+    "subtitle": "Technologies that i have contact during my career."
   }
 }

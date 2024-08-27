@@ -20,5 +20,9 @@
       "monitore": "Aplicativo de monitoramento de infraestrutura por meio da gestão de logs, instâncias e serviços.",
       "portfolio-v2": "Repositório do projeto que você está visualizando agora. Uma reformulação do meu portfólio antigo usando novas tecnologias!"
     }
+  },
+  "techs": {
+    "title": "Tecnologias",
+    "subtitle": "Tecnologias que jã tive contato durante a minha carreira."
   }
 }
