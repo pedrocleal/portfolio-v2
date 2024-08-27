@@ -3,5 +3,22 @@
     "hello": "Olá!",
     "text": "Me chamo Pedro Leal, sou um Engenheiro de Software do Brasil com mais de 3 anos de experiência no desenvolvimento web. Atualmente trabalho com ReactJS e Typescript."
   },
-  "profile-info": ""
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Aqui estão alguns dos projetos em que trabalhei:",
+    "tabs": {
+      "all": "Todos",
+      "personal": "Projetos pessoais",
+      "professional": "Projetos profissionais"
+    },
+    "in-progress": "Em andamento",
+    "projects-list-descriptions": {
+      "abexpay": "Plataforma de marketplace para pagamentos parcelamento de débitos.",
+      "hiper-medica": "Site para uma clínica médica.",
+      "fast-store": "Projeto pessoal de um e-commerce fictício. Desenvolvido com a intenção de praticar meus estudos no ínicio de minha carreira.",
+      "dental-lider": "Site para uma clínica odontológica.",
+      "monitore": "Aplicativo de monitoramento de infraestrutura por meio da gestão de logs, instâncias e serviços.",
+      "portfolio-v2": "Repositório do projeto que você está visualizando agora. Uma reformulação do meu portfólio antigo usando novas tecnologias!"
+    }
+  }
 }

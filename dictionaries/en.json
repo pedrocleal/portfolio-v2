@@ -3,5 +3,22 @@
     "hello": "Hello!",
     "text": "My name is Pedro Leal, I'm a Software Engineer from Brazil with over 3 years of experience in web development. I currently work with ReactJS and Typescript."
   },
-  "profile-info": ""
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Here are some of the projects I've worked on:",
+    "tabs": {
+      "all": "All",
+      "personal": "Personal projects",
+      "professional": "Professional projects"
+    },
+    "in-progress": "In progress",
+    "projects-list-descriptions": {
+      "abexpay": "Marketplace platform for debt installment payments.",
+      "hiper-medica": "Website for a medical clinic.",
+      "fast-store": "Personal project of a fake e-commerce. Developed with the intention of practicing my studies.",
+      "dental-lider": "Website for a dental clinic.",
+      "monitore": "Infrastructure monitoring application through management of logs, instances and services.",
+      "portfolio-v2": "Repository of the project you are viewing now. A revamp of my old portfolio using new technologies!"
+    }
+  }
 }

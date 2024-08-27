@@ -22,7 +22,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
         sm:h-screen sm:mt-0
       "
       >
-        <ProfileInfo dictionary={dictionary["profile-info"]} />
+        <ProfileInfo />
 
         <Greetings dictionary={dictionary["greetings"]} />
 
@@ -30,7 +30,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
         <PreferencesMenu />
       </section>
 
-      <Projects />
+      <Projects dictionary={dictionary["projects"]} />
     </main>
   );
 }

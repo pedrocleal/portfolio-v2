@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { buttonVariants } from "@/shad-components/button";
 import { Inbox } from "lucide-react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export default function SocialLinks() {
   return (
@@ -44,7 +45,7 @@ export default function SocialLinks() {
         <span>E-mail</span>
       </Link>
 
-      <Link
+      {/* <Link
         className={buttonVariants({
           variant: "outline",
           className: "max-sm:w-full w-full gap-2",
@@ -67,6 +68,18 @@ export default function SocialLinks() {
           />
         </svg>
         Portfolio V1
+      </Link> */}
+
+      <Link
+        className={buttonVariants({
+          variant: "outline",
+          className: "max-sm:w-full w-full gap-2",
+        })}
+        href="https://github.com/pedrocleal"
+        target="_blank"
+      >
+        <GitHubLogoIcon />
+        Github
       </Link>
     </div>
   );

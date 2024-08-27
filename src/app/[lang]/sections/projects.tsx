@@ -7,8 +7,10 @@ import { GitHubLogoIcon, OpenInNewWindowIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import projects from "@/database/projects";
 import { Tabs, TabsList, TabsTrigger } from "@/shad-components/ui/tabs";
+import { ComponentWithDictionary } from "@/app/types/dictionary";
+import { getDictionary } from "../../../../get-dictionary";
 
-export default function Projects() {
+export default function Projects({ dictionary }: { dictionary: Awaited<ReturnType<typeof getDictionary>>["projects"] }) {
   const [activeType, setActiveType] = useState<"all" | "personal" | "professional">("all");
 
   const filteredProjects = projects.filter((project) => {
@@ -20,26 +22,26 @@ export default function Projects() {
     <section className="w-full mb-36">
       <div className="flex flex-col text-left">
         <h3 className="mb-1 text-3xl font-bold leading-none tracking-tight text-slate-800 md:text-4xl lg:text-4xl dark:text-white ">
-          Projetos
+          {dictionary.title}
         </h3>
-        <p className="text-sm text-slate-400">Alguns dos meus projetos mais recentes.</p>
+        <p className="text-sm text-slate-400">{dictionary.subtitle}</p>
       </div>
 
       <Tabs className="mt-6" defaultValue="all">
         <TabsList className="w-full">
           <TabsTrigger className="w-full" value="all" onClick={() => setActiveType("all")}>
-            Todos
+            {dictionary.tabs.all}
           </TabsTrigger>
           <TabsTrigger className="w-full" value="personal" onClick={() => setActiveType("personal")}>
-            Projetos pessoais
+            {dictionary.tabs.professional}
           </TabsTrigger>
           <TabsTrigger className="w-full" value="professional" onClick={() => setActiveType("professional")}>
-            Projetos profissionais
+            {dictionary.tabs.personal}
           </TabsTrigger>
         </TabsList>
       </Tabs>
 
-      <div className="flex flex-col gap-4 mt-4">
+      <div className="flex flex-col gap-4 my-4 max-h-[400px] overflow-auto">
         {filteredProjects.map((project) => (
           <div
             key={project.id}
@@ -57,10 +59,14 @@ export default function Projects() {
                 <h4 className="text-lg font-bold flex gap-2 items-center">
                   {project.title}
                   {project["in-progress"] && (
-                    <Badge className="bg-green-500/30 text-green-500" variant={"outline"}>Em desenvolvimento</Badge>
+                    <Badge className="bg-green-500/30 text-green-500" variant={"outline"}>
+                      {dictionary["in-progress"]}
+                    </Badge>
                   )}
                 </h4>
-                <p className="text-xs text-slate-500 dark:text-slate-500">{project.description}</p>
+                {/* todo: resolve this */}
+                {/* @ts-ignore */}
+                <p className="text-xs text-slate-500 dark:text-slate-500">{dictionary["projects-list-descriptions"][project.key]}</p>
 
                 <div className="mt-2">
                   {project.techs.map((tech) => (
@@ -73,13 +79,22 @@ export default function Projects() {
             </div>
 
             <div className="flex flex-row gap-2 items-start justify-start min-[480px]:flex-col">
-              <Button variant={"outline"} size={"icon"}
+              <Button
+                variant={"outline"}
+                size={"icon"}
                 disabled={!project["demo"]}
-                onClick={() => window.open(project["demo"])}>
+                onClick={() => window.open(project["demo"])}
+              >
                 <OpenInNewWindowIcon />
               </Button>
 
-              <Button disabled={!project["repository-url"]} variant={"outline"} size={"icon"} className="text-sm" onClick={() => window.open(project["repository-url"])}>
+              <Button
+                disabled={!project["repo-url"]}
+                variant={"outline"}
+                size={"icon"}
+                className="text-sm"
+                onClick={() => window.open(project["repo-url"])}
+              >
                 <GitHubLogoIcon />
               </Button>
             </div>

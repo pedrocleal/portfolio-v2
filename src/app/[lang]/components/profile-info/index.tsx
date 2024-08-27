@@ -1,11 +1,6 @@
-"use client";
-
-import { useLanguage } from "../../../context/language-provider";
-import { getDictionary } from "../../../../../get-dictionary";
-import { ComponentWithDictionary } from "@/app/types/dictionary";
 import Avatar from "../avatar";
 
-export default function ProfileInfo({ dictionary }: { dictionary: ComponentWithDictionary["profile-info"] }) {
+export default function ProfileInfo() {
   return (
     <div className="flex flex-col items-center">
       <Avatar />
