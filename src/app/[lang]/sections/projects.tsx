@@ -32,10 +32,10 @@ export default function Projects({ dictionary }: { dictionary: Awaited<ReturnTyp
           <TabsTrigger className="w-full" value="all" onClick={() => setActiveType("all")}>
             {dictionary.tabs.all}
           </TabsTrigger>
-          <TabsTrigger className="w-full" value="personal" onClick={() => setActiveType("personal")}>
+          <TabsTrigger className="w-full" value="professional" onClick={() => setActiveType("professional")}>
             {dictionary.tabs.professional}
           </TabsTrigger>
-          <TabsTrigger className="w-full" value="professional" onClick={() => setActiveType("professional")}>
+          <TabsTrigger className="w-full" value="personal" onClick={() => setActiveType("personal")}>
             {dictionary.tabs.personal}
           </TabsTrigger>
         </TabsList>
