@@ -28,7 +28,7 @@ export default function Projects({ dictionary }: { dictionary: Awaited<ReturnTyp
       </div>
 
       <Tabs className="mt-6" defaultValue="all">
-        <TabsList className="w-full">
+        <TabsList className="w-full overflow-auto flex items-start justify-start">
           <TabsTrigger className="w-full" value="all" onClick={() => setActiveType("all")}>
             {dictionary.tabs.all}
           </TabsTrigger>
@@ -56,10 +56,10 @@ export default function Projects({ dictionary }: { dictionary: Awaited<ReturnTyp
                 height={10}
               /> */}
               <div>
-                <h4 className="text-lg font-bold flex gap-2 items-center">
+                <h4 className="text-lg font-bold flex flex-col gap-1 items-start sm:flex-row sm:gap-2 ">
                   {project.title}
                   {project["in-progress"] && (
-                    <Badge className="bg-green-500/30 text-green-500" variant={"outline"}>
+                    <Badge className="bg-green-500/30 text-green-500 mb-4" variant={"outline"}>
                       {dictionary["in-progress"]}
                     </Badge>
                   )}

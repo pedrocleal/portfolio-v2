@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { buttonVariants } from "@/shad-components/button";
-import { Inbox } from "lucide-react";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { Download, DownloadCloud, Inbox, Link2 } from "lucide-react";
+import { GitHubLogoIcon, LinkedInLogoIcon, OpenInNewWindowIcon } from "@radix-ui/react-icons";
 
 export default function SocialLinks() {
   return (
-    <div className="flex gap-3 max-sm:flex-col w-full max-w-md">
+    <div className="flex gap-3 max-sm:flex-col w-full">
       <Link
         className={buttonVariants({
           variant: "default",
@@ -15,20 +15,8 @@ export default function SocialLinks() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="size-4"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
-          />
-        </svg>
+        <LinkedInLogoIcon />
+
         <span>LinkedIn</span>
       </Link>
 
@@ -45,7 +33,19 @@ export default function SocialLinks() {
         <span>E-mail</span>
       </Link>
 
-      {/* <Link
+      <Link
+        className={buttonVariants({
+          variant: "outline",
+          className: "max-sm:w-full w-full gap-2",
+        })}
+        href="https://github.com/pedrocleal"
+        target="_blank"
+      >
+        <GitHubLogoIcon />
+        Github
+      </Link>
+
+      <Link
         className={buttonVariants({
           variant: "outline",
           className: "max-sm:w-full w-full gap-2",
@@ -68,18 +68,6 @@ export default function SocialLinks() {
           />
         </svg>
         Portfolio V1
-      </Link> */}
-
-      <Link
-        className={buttonVariants({
-          variant: "outline",
-          className: "max-sm:w-full w-full gap-2",
-        })}
-        href="https://github.com/pedrocleal"
-        target="_blank"
-      >
-        <GitHubLogoIcon />
-        Github
       </Link>
     </div>
   );

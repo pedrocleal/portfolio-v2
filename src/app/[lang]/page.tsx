@@ -11,28 +11,18 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
   const dictionary = await getDictionary(lang);
 
   return (
-    <main
-      className="w-full m-auto px-4 flex flex-col items-center justify-center gap-12
-      sm:max-w-3xl
-    "
-    >
-      <section
-        className="h-screen flex flex-col
-      items-center justify-center max-w-sm m-auto
-        w-full 
-        sm:h-screen sm:mt-0
-      "
-      >
-        <ProfileInfo />
+    <main className="w-full m-auto px-4 flex flex-col items-center justify-center gap-12 sm:max-w-3xl">
+      <section className="flex flex-col items-center justify-center m-auto w-full my-40">
+        <div className="w-full flex items-start justify-between">
+          <ProfileInfo />
+          <PreferencesMenu />
+        </div>
 
         <Greetings dictionary={dictionary["greetings"]} />
 
         <SocialLinks />
-        <PreferencesMenu />
       </section>
-
       <Projects dictionary={dictionary["projects"]} />
-
       <Techs dictionary={dictionary["techs"]} />
     </main>
   );

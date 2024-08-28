@@ -9,7 +9,7 @@ export default function Greetings({
   dictionary: Awaited<ReturnType<typeof getDictionary>>["greetings"];
 }) {
   return (
-    <Alert className="flex items-start gap-4 w-full max-w-sm my-4 shadow">
+    <Alert className="flex items-start gap-4 w-full my-4 shadow">
       <strong className="text-lg">👋🏾</strong>
       <div>
         <AlertTitle className="text-lg">{dictionary.hello}</AlertTitle>
